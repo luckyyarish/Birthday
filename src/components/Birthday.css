@@ -1,7 +1,5 @@
-img {
-    width: 60%;
-    max-width: 700px;
-    border-radius: 1rem;
+.reset {
+    font-size: 1rem;
 }
 
 .animate__tada {
@@ -9,12 +7,114 @@ img {
     overflow: hidden;
 }
 
-.reset {
-    font-size: 1rem;
+/* Birthday Text */
+.birthday-text {
+  text-align: center;
+  margin: 1rem 0;
 }
 
+/* Cats Container - Side by Side */
+.cats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* INCREASED GAP */
+  margin: 1rem auto;
+  position: relative;
+  max-width: 100%;
+}
+
+/* Main Center Cat - BIG (like your original img style) */
+.cat-main {
+  width: 60%;
+  max-width: 700px;
+  border-radius: 1rem;
+  object-fit: cover;
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); */
+  z-index: 2;
+}
+
+/* Side Cats - SMALLER */
+.cat-side {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 1rem;
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); */
+  opacity: 0.85;
+}
+
+.cat-left {
+  margin-right: 0; /* REMOVED OVERLAP */
+}
+
+.cat-right {
+  margin-left: 0; /* REMOVED OVERLAP */
+}
+
+/* Cake Text */
+.cake {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Birthday Message */
+.birthday-message {
+  font-size: 1rem;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  line-height: 1.6;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Mobile - Show tiny side cats */
 @media only screen and (max-width: 500px) {
-    img {
-        width: 85%;
+    .cat-side {
+        width: 100px;
+        height: 100px;
+        opacity: 0.75;
     }
+    
+    .cat-left {
+        margin-right: 0;
+    }
+    
+    .cat-right {
+        margin-left: 0;
+    }
+    
+    .cat-main {
+        width: 65%;
+        max-width: 220px;
+    }
+    
+    .cats-container {
+        gap: 0.8rem; /* MORE GAP ON MOBILE TOO */
+    }
+}
+
+/* Tablet and larger */
+@media (min-width: 768px) {
+  .cat-side {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .cats-container {
+    gap: 3rem; /* EVEN MORE GAP ON TABLET */
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .cat-side {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .cats-container {
+    gap: 4rem; /* MAXIMUM GAP ON DESKTOP */
+  }
 }

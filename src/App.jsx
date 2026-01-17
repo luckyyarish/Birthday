@@ -3,7 +3,9 @@ import './App.css'
 import 'animate.css';
 import Birthday from './components/Birthday';
 import PulseLoader from "react-spinners/PulseLoader";
-import Cat from './media/dance-party-cat.gif';
+import CatCenter from './media/dance-party-cat.gif';
+import CatRight from './media/dancing-cat-cat.gif';
+import CatLeft from './media/peach-cat-goma.gif';
 import PartyHorn from './media/party-horn.mp3';
 
 const App = () => {
@@ -39,7 +41,15 @@ const App = () => {
   return (
    <>
     {buttonIsPressed ? 
-      <Birthday cat={Cat} birthdayPerson={birthdayPerson} handleClick={handleClick} horn={horn} useFinnish={useFinnish} />
+      <Birthday 
+        catLeft={CatLeft}
+        catCenter={CatCenter}
+        catRight={CatRight}
+        birthdayPerson={birthdayPerson} 
+        handleClick={handleClick} 
+        horn={horn} 
+        useFinnish={useFinnish} 
+      />
       : 
       (!loading ?
         <button className='animate__animated animate__zoomIn animate__fast' onClick={() => {
